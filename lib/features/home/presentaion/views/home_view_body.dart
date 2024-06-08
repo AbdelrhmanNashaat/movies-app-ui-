@@ -17,23 +17,28 @@ class HomeViewBody extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: kPrimaryColor,
       ),
-      child: ListView(
-        children: const [
+      child: const Column(
+        children: [
           CustomAppBar(),
           SizedBox(height: 15),
           SearchBarWidget(),
           SizedBox(height: 15),
           ListViewOfText(),
-          LineWidget(paddingLeft: 16, paddingRight: 308),
+          LineWidget(paddingLeft: 16, paddingRight: 330),
           SizedBox(height: 15),
           CustomListViewOfImages(),
-          SizedBox(height: 5),
+          SizedBox(height: 15),
           Stack(
+            clipBehavior: Clip.none,
             children: [
               RecommendationMovies(),
-              CustomNavigationBar(
-                colorIcon1: kBlueColor,
-                colorText1: kBlueColor,
+              Positioned(
+                top: 70,
+                left: 0,
+                child: CustomNavigationBar(
+                  colorIcon1: kBlueColor,
+                  colorText1: kBlueColor,
+                ),
               ),
             ],
           ),

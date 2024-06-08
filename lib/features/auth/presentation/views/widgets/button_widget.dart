@@ -4,12 +4,12 @@ import '../../../../../core/utils/widgets/text_poppins.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
-  final Color backroundColor;
+  final Color backgroundColor;
   final Color borderColor;
   const ButtonWidget({
     super.key,
     required this.text,
-    required this.backroundColor,
+    required this.backgroundColor,
     required this.borderColor,
   });
 
@@ -18,19 +18,19 @@ class ButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: () => GoRouter.of(context).push('/homepage'),
       style: ButtonStyle(
-        side: MaterialStatePropertyAll(
+        side: WidgetStatePropertyAll(
           BorderSide(
             color: borderColor,
             width: 1.5,
           ),
         ),
-        backgroundColor: MaterialStatePropertyAll(backroundColor),
-        shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+        backgroundColor: WidgetStatePropertyAll(backgroundColor),
+        shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),
-        minimumSize: const MaterialStatePropertyAll(
+        minimumSize: const WidgetStatePropertyAll(
           Size(316, 45),
         ),
       ),
@@ -43,6 +43,7 @@ class ButtonWidget extends StatelessWidget {
           text: text,
           size: 18,
           fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
       ),
     );

@@ -15,64 +15,62 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
-        Column(
+        const AuthTextPadding(
+            text1: 'Welcome!', text2: 'Please sign up to continue'),
+        const SizedBox(height: 35),
+        const Column(
           children: [
-            const AuthTextPadding(
-                text1: 'Welcome!', text2: 'Please sign up to continue'),
-            const SizedBox(height: 35),
-            const Column(
-              children: [
-                TextFormFieldWidget(label: 'Enter email here'),
-                SizedBox(height: 18),
-                TextFormFieldWidget(
-                  label: 'Enter password here',
-                  icon: Icon(
-                    Icons.visibility_off_outlined,
-                    color: kIconsColor,
-                    size: 18,
-                  ),
-                ),
-                SizedBox(height: 18),
-                TextFormFieldWidget(
-                  label: 'Confirm password',
-                  icon: Icon(
-                    Icons.visibility_off_outlined,
-                    color: kIconsColor,
-                    size: 18,
-                  ),
-                ),
-              ],
+            TextFormFieldWidget(label: 'Enter email here'),
+            SizedBox(height: 18),
+            TextFormFieldWidget(
+              label: 'Enter password here',
+              icon: Icon(
+                Icons.visibility_off_outlined,
+                color: kIconsColor,
+                size: 18,
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: RowWidget(),
+            SizedBox(height: 18),
+            TextFormFieldWidget(
+              label: 'Confirm password',
+              icon: Icon(
+                Icons.visibility_off_outlined,
+                color: kIconsColor,
+                size: 18,
+              ),
             ),
-            const SizedBox(height: 18),
-            const ButtonWidget(
-              text: 'signup',
-              backroundColor: kButton1Color,
-              borderColor: kButton1Color,
-            ),
-            const SizedBox(height: 18),
-            const AuthText(
-              text: 'or',
-              size: 20,
-              fontWeight: FontWeight.w600,
-              color: kBlackColorWithOpacity1,
-            ),
-            const SizedBox(height: 8),
-            const ButtonWithIcon(),
-            const SizedBox(height: 3),
-            CustomRow(
-              text1: 'Already have an account ?',
-              text2: 'Sign in',
-              onPressed: () => GoRouter.of(context).push('/signupview'),
-            ),
-            const CustomImageWidget(),
           ],
         ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          child: RowWidget(),
+        ),
+        const SizedBox(height: 18),
+        const ButtonWidget(
+          text: 'Sign up',
+          backgroundColor: kButton1Color,
+          borderColor: kButton1Color,
+        ),
+        const SizedBox(height: 18),
+        const AuthText(
+          text: 'or',
+          size: 20,
+          fontWeight: FontWeight.w600,
+          color: kBlackColorWithOpacity1,
+        ),
+        const SizedBox(height: 8),
+        const ButtonWithIcon(),
+        const SizedBox(height: 3),
+        CustomRow(
+          text1: 'Already have an account ?',
+          text2: 'Sign in',
+          onPressed: () => GoRouter.of(context).push('/loginview'),
+        ),
+        const Spacer(),
+        const CustomImageWidget(),
+        const SizedBox(height: 8),
       ],
     );
   }

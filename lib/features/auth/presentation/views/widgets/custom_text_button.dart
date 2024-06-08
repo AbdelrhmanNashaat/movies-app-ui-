@@ -19,7 +19,12 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: TextPoppins(text: text, size: size, fontWeight: fontWeight),
+      child: TextPoppins(
+        text: text,
+        size: size,
+        fontWeight: fontWeight,
+        color: Colors.deepPurple,
+      ),
     );
   }
 }

@@ -26,7 +26,8 @@ class CustomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 80),
-      height: 70,
+      height: 60,
+      width: 400,
       decoration: BoxDecoration(
         color: kCustomBar,
         borderRadius: BorderRadius.circular(50.0),
